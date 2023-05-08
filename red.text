@@ -1,0 +1,20 @@
+ขั้นตอนการติดตั้ง nest.js
+--Step1
+  npm i -g @nestjs/cli
+--Step2
+  nest new project-name
+--Step3 การสร้าง module
+  nest g module ชื่อที่ต้องการ
+--Step4 รัน docker
+  docker compose up dev-db -d
+--Step5 install prisma
+  yarn add -D prisma
+--Step6 สร้าง prima
+  npx prisma init
+
+--Step7 หลังสร้างไฟล์ schema แล้ว
+  npx prisma migrate dev เพือนรันไฟล์ให้ไปสร้างฐานข้อมุล
+  npx prisma generate
+  npx prisma studio
+  nest g module prisma
+  nest g service prisma --no-spec
